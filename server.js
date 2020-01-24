@@ -1,12 +1,12 @@
 const express = require('express');
 
-// const CarsRouter = require('../cars/cars-router.js');
+const RecipeRouter = require('./recipes/router.js');
 
 const server = express();
 
 server.use(express.json());
 
-// server.use('/api/cars', CarsRouter);
+server.use('/api/recipes', RecipeRouter);
 
 server.get('/', (req, res) => {
     res.send('<h3>Server online.</h3>');
