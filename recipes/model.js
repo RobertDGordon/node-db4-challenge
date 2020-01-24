@@ -22,8 +22,8 @@ function findById(id) {
 
 function findSteps(id) {
   return db('steps as st')
-    .join('recipes as s', 's.id', 'st.recipe_id')
-    .select('s.recipe_name', 'st.id as step_id', 'st.step_number', 'st.instructions')
+    .join('recipes as r', 'r.id', 'st.recipe_id')
+    .select('r.name', 'st.id as step_id', 'st.step_number', 'st.instructions')
     .where('st.recipe_id', id)
     .orderBy('st.step_number');
 }
